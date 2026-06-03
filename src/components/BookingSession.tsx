@@ -6,7 +6,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Calendar, Clock, Check, Sparkles, ChevronRight, AlertCircle, Heart, X, Sparkle } from "lucide-react";
-import { CORE_OFFER } from "../types";
 
 interface BookingSessionProps {
   onClose: () => void;

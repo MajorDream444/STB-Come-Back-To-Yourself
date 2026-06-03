@@ -48,9 +48,9 @@ Major/STB's job: maintain the structure, set up automations later.
 | Email | Primary contact |
 | WhatsApp / Phone | Optional |
 | Instagram / Social | If known |
-| Source | Website / Instagram / Referral / Word of mouth |
-| Interest | Discovery Call / Reset / Journey / General |
-| Status | New / Contacted / Call Booked / Not a Fit / Nurturing |
+| Source | Website / Instagram / Referral / Word of mouth / Weekly Circle |
+| Interest | Discovery Call / Reset / Journey / Weekly Circle / General |
+| Status | New / Contacted / Call Booked / Waitlist / Not a Fit / Nurturing |
 | Next Step | What needs to happen |
 | Follow-Up Date | When to check in |
 | Notes | Anything relevant Flo wants to remember |
@@ -195,3 +195,28 @@ When Flo is consistently running:
 - Regular testimonial collection → automate the request after each session
 
 Until then: keep it manual, keep it human, keep it calm.
+
+---
+
+## V1 Scheduling Rule
+
+**Manual scheduling is acceptable in V1.**
+
+Automation should only be added when the manual process becomes the bottleneck.
+
+Flo personally reviews each request and confirms timing directly.
+This keeps the process intentional and paced — and it is appropriate for this stage.
+
+When Flo is spending more than 1 hour per week just on scheduling admin,
+that is the signal to add a booking tool (e.g. Calendly with intake form).
+
+---
+
+## Waitlist
+
+When capacity is full, leads move to **Waitlist** status.
+
+Flo sends a short personal note:
+
+> Thank you for reaching out. I am currently full but am holding a small waitlist.
+> I will be in touch when a space opens. — Flo
