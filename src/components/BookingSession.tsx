@@ -84,34 +84,30 @@ export function BookingSession({ onClose, initialSessionType = "discovery" }: Bo
     }
   };
 
-  const submitBooking = async (e: React.FormEvent) => {
+  const submitBooking = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !termsAccepted) return;
 
     setLoading(true);
-    try {
-      await fetch("/api/book", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          type: "booking",
-          name,
-          email,
-          phone,
-          date: availableDates.find((d) => d.value === selectedDate)?.label || selectedDate,
-          time: selectedTime,
-          sessionTitle: activeSession.title,
-          sessionPrice: activeSession.price,
-          symptoms: symptom,
-          notes: customMsg,
-        }),
-      });
-    } catch {
-      // Still show success UX even if network fails
-    } finally {
+
+    const dateLabel = availableDates.find((d) => d.value === selectedDate)?.label || selectedDate;
+    const bodyLines = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      phone ? `Phone: ${phone}` : null,
+      `Session: ${activeSession.title} (${activeSession.price})`,
+      `Date: ${dateLabel} at ${selectedTime}`,
+      symptom.length ? `Symptoms: ${symptom.join(", ")}` : null,
+      customMsg ? `Notes: ${customMsg}` : null,
+    ]
+      .filter(Boolean)
+      .join("%0D%0A");
+
+    setTimeout(() => {
       setLoading(false);
       setStep(4);
-    }
+      window.location.href = `mailto:hi@floortjedeliefde.com?subject=Booking Request — ${encodeURIComponent(activeSession.title)} from ${encodeURIComponent(name)}&body=${bodyLines}`;
+    }, 800);
   };
 
   return (

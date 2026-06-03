@@ -151,23 +151,16 @@ export function BreathReset({ onOpenLeadModal }: BreathResetProps) {
     setTotalSecondsElapsed(0);
   };
 
-  const handleLeadSubmit = async (e: React.FormEvent) => {
+  const handleLeadSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
 
     setLoading(true);
-    try {
-      await fetch("/api/book", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "lead", name, email }),
-      });
-    } catch {
-      // Still show success UX
-    } finally {
+    setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-    }
+      window.location.href = `mailto:hi@floortjedeliefde.com?subject=3x5 Breath Reset Guide Request&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}`;
+    }, 900);
   };
 
   // Calculate motion scale and label
