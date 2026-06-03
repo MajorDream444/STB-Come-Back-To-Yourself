@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import YouAreNotBroken from "./components/YouAreNotBroken";
 import WhyThisFeelsDifferent from "./components/WhyThisFeelsDifferent";
+import WeeklyCircle from "./components/WeeklyCircle";
 import OfferCards from "./components/OfferCards";
 import AboutFlo from "./components/AboutFlo";
 import FloApproach from "./components/FloApproach";
@@ -41,6 +42,8 @@ export default function App() {
       <YouAreNotBroken />
 
       <WhyThisFeelsDifferent />
+
+      <WeeklyCircle />
 
       <OfferCards />
 
@@ -88,19 +91,14 @@ export default function App() {
             className="fixed bottom-6 left-0 right-0 z-50 px-4 flex justify-center pointer-events-none"
           >
             <div className="bg-[#1a2e1a] rounded-2xl py-3 px-5 shadow-2xl flex items-center justify-between gap-6 pointer-events-auto max-w-lg w-full">
-              <div>
-                <p className="font-serif text-sm text-[#FAF6F0] leading-tight">
-                  60-Min Nervous System Reset
-                </p>
-                <p className="font-accent text-[10px] tracking-widest uppercase text-[#658365] mt-0.5">
-                  €75 — private session
-                </p>
-              </div>
+              <p className="font-serif text-sm text-[#FAF6F0] leading-snug">
+                Free Discovery Call — Start Here
+              </p>
               <a
                 href={BOOKING_MAILTO}
                 className="bg-[#C4924A] hover:bg-[#E8D09A] hover:text-[#334233] text-[#FAF6F0] font-accent font-semibold text-xs tracking-widest px-5 py-2.5 rounded-full transition-colors cursor-pointer whitespace-nowrap"
               >
-                Book Now
+                Book a Call
               </a>
             </div>
           </motion.div>

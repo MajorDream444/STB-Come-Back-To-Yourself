@@ -28,12 +28,15 @@ export interface ApproachStep {
 export const BOOKING_MAILTO =
   "mailto:hi@floortjedeliefde.com?subject=Discovery Call Request — Come Back To Yourself";
 
+export const CIRCLE_MAILTO =
+  "mailto:hi@floortjedeliefde.com?subject=Weekly Circle Interest";
+
 export const NAV_LINKS: NavLink[] = [
   { label: "The Return", sectionId: "return-section" },
   { label: "The Reality", sectionId: "youarenotbroken" },
+  { label: "Weekly Circle", sectionId: "weekly-circle" },
   { label: "How We Work", sectionId: "work" },
   { label: "About Flo", sectionId: "about" },
-  { label: "The Approach", sectionId: "approach" },
 ];
 
 export const OFFER_CARDS: OfferCard[] = [
@@ -42,21 +45,21 @@ export const OFFER_CARDS: OfferCard[] = [
     duration: "30 Minutes",
     price: "Free",
     description:
-      "A conversation to explore where you are, what you're carrying, and whether this work feels aligned.",
+      "Start here if you are curious, unsure, or want to feel whether this work is right for you.",
   },
   {
-    title: "Nervous System Reset",
-    duration: "30–45 Minutes",
-    price: "€75",
+    title: "Weekly Breath & Integration Circle",
+    duration: "2 Hours",
+    price: "Weekly",
     description:
-      "A gentle introduction to breath, awareness, grounding, and body connection.",
+      "A simple weekly group space to breathe, reflect, and reconnect. Come as you are. No need to have the right words.",
   },
   {
     title: "Private Breathwork Journey",
     duration: "90 Minutes",
     price: "€150",
     description:
-      "The signature experience. Arrival, intention, conscious connected breathwork, integration, and reflection.",
+      "The signature 1:1 experience. Arrival, intention, conscious connected breathwork, integration, and reflection.",
     isPrimary: true,
   },
 ];

@@ -21,6 +21,9 @@
       ]
     },
     "allowImportingTsExtensions": true,
-    "noEmit": true
-  }
+    "noEmit": true,
+    "noImplicitAny": false
+  },
+  "include": ["src", "api"],
+  "exclude": ["node_modules", "dist", "come-back-to-yourself---flo-de-liefde (2)"]
 }
