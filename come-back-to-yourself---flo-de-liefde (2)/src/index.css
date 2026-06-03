@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-accent: "Plus Jakarta Sans", sans-serif;
+
+  --color-sage-50: #f4f6f4;
+  --color-sage-100: #e9ece9;
+  --color-sage-200: #d4dfd4;
+  --color-sage-300: #b1c3b1;
+  --color-sage-400: #88a388;
+  --color-sage-500: #658365;
+  --color-sage-600: #4f684f;
+  --color-sage-700: #405340;
+  --color-sage-800: #334233;
+  --color-sage-900: #293529;
+
+  --color-cream-50: #fdfdfd;
+  --color-cream-100: #faf6f0;
+  --color-cream-200: #f4edd9;
+  --color-cream-300: #ebdcc8;
+
+  --color-gold-100: #f7edd3;
+  --color-gold-200: #ecdcae;
+  --color-gold-300: #dec586;
+  --color-gold-400: #cfae5f;
+  --color-gold-500: #c5a880;
+  --color-gold-600: #ad906a;
+  --color-gold-700: #896e4e;
+
+  --color-earth-deep: #2a312a;
+  --color-earth-light: #5a645a;
+}
+
+/* Base style resets */
+body {
+  background-color: var(--color-cream-100);
+  color: var(--color-earth-deep);
+  font-family: var(--font-sans);
+}
+
+@keyframes float-slower {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(3deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-3deg); }
+}
+
+.animate-float-slower {
+  animation: float-slower 8s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Hide scrollbar but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
