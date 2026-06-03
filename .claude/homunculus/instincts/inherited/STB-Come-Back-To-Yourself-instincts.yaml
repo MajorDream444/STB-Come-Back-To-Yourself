@@ -1,0 +1,324 @@
+# Instincts generated from https://github.com/MajorDream444/STB-Come-Back-To-Yourself
+# Generated: 2026-06-03T01:45:27.377Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: STB-Come-Back-To-Yourself-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# STB Come Back To Yourself Commit Length
+
+## Action
+
+Write moderate-length commit messages (~59 characters)
+
+## Evidence
+
+- Average commit message length: 59 chars
+- Based on 3 commits
+
+---
+id: STB-Come-Back-To-Yourself-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# STB Come Back To Yourself Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: STB-Come-Back-To-Yourself-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# STB Come Back To Yourself Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: STB-Come-Back-To-Yourself-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# STB Come Back To Yourself Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: assets, components
+
+---
+id: STB-Come-Back-To-Yourself-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# STB Come Back To Yourself Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: STB-Come-Back-To-Yourself-workflow-update-feature-implementation-and-related-forms
+trigger: "when doing update feature implementation and related forms"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# STB Come Back To Yourself Workflow Update Feature Implementation And Related Forms
+
+## Action
+
+Follow the update-feature-implementation-and-related-forms workflow:
+1. Modify or remove API/backend route files as needed (e.g., api/book.ts).
+2. Update corresponding frontend components that interact with the backend or handle form logic (e.g., src/components/BookingSession.tsx, src/components/BreathReset.tsx).
+3. Adjust configuration files for deployment or environment as necessary (e.g., vercel.json, .env.example).
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: api/book.ts, src/components/BookingSession.tsx, src/components/BreathReset.tsx
+
+---
+id: stb-come-back-to-yourself-instinct-file-naming
+trigger: "When creating or renaming files in the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# Stb Come Back To Yourself Instinct File Naming
+
+## Action
+
+Use camelCase for file names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+- Observed in src/components/BookingSession.tsx
+
+---
+id: stb-come-back-to-yourself-instinct-function-naming
+trigger: "When defining a function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# Stb Come Back To Yourself Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: stb-come-back-to-yourself-instinct-class-naming
+trigger: "When defining a class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# Stb Come Back To Yourself Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: stb-come-back-to-yourself-instinct-constant-naming
+trigger: "When declaring a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# Stb Come Back To Yourself Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: stb-come-back-to-yourself-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# Stb Come Back To Yourself Instinct Import Style
+
+## Action
+
+Use a mixed import style (both default and named imports as appropriate)
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: stb-come-back-to-yourself-instinct-export-style
+trigger: "When exporting modules or functions"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# Stb Come Back To Yourself Instinct Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: stb-come-back-to-yourself-instinct-testing-location
+trigger: "When adding or updating tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# Stb Come Back To Yourself Instinct Testing Location
+
+## Action
+
+Place tests in a separate folder from source files
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation
+
+---
+id: stb-come-back-to-yourself-instinct-commit-format
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# Stb Come Back To Yourself Instinct Commit Format
+
+## Action
+
+Use a freeform commit message without a strict prefix, keep the message concise (~59 characters on average)
+
+## Evidence
+
+- Pattern in commits.type
+- Average length in commits.averageLength
+- Examples in commits.examples
+
+---
+id: stb-come-back-to-yourself-instinct-try-catch-errors
+trigger: "When handling errors in code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# Stb Come Back To Yourself Instinct Try Catch Errors
+
+## Action
+
+Use try-catch blocks for error handling
+
+## Evidence
+
+- Pattern in errorHandling.style
+
+---
+id: stb-come-back-to-yourself-instinct-update-feature-workflow
+trigger: "When someone wants to add, remove, or change a major feature that involves both frontend forms and backend/API logic"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: MajorDream444/STB-Come-Back-To-Yourself
+---
+
+# Stb Come Back To Yourself Instinct Update Feature Workflow
+
+## Action
+
+Modify or remove API/backend route files as needed, update corresponding frontend components that interact with the backend or handle form logic, and adjust configuration files for deployment or environment as necessary
+
+## Evidence
+
+- Workflow: update-feature-implementation-and-related-forms
+- Example commits and files in workflow
+
