@@ -1,0 +1,6 @@
+{
+  "name": "Come Back To Yourself - Flo de Liefde",
+  "description": "A premium, emotionally intelligent digital sanctuary and guided somatic doorway for breathwork practitioner Floortje de Liefde.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
