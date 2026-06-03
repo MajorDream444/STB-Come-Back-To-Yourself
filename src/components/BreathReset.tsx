@@ -159,7 +159,7 @@ export function BreathReset({ onOpenLeadModal }: BreathResetProps) {
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-      window.location.href = `mailto:hi@floortjedeliefde.com?subject=3x5 Breath Reset Guide Request&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}`;
+      window.location.href = `mailto:Floordeliefde21@gmail.com?subject=3x5 Breath Reset Guide Request&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}`;
     }, 900);
   };
 

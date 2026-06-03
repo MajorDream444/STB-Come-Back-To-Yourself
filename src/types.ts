@@ -25,11 +25,17 @@ export interface ApproachStep {
   description: string;
 }
 
-export const BOOKING_MAILTO =
-  "mailto:hi@floortjedeliefde.com?subject=Discovery Call Request — Come Back To Yourself";
+export const INTAKE_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdO4Woi_W1SoCDs33ITJtaGUzV1sqtBmyFb1uznvw0Fg_7jlw/viewform?usp=header";
 
-export const CIRCLE_MAILTO =
-  "mailto:hi@floortjedeliefde.com?subject=Weekly Circle Interest";
+export const FLO_EMAIL = "Floordeliefde21@gmail.com";
+export const FLO_WHATSAPP = "+31 6 55797661";
+export const FLO_WHATSAPP_LINK = "https://wa.me/31655797661";
+
+/** @deprecated use INTAKE_FORM_URL */
+export const BOOKING_MAILTO = INTAKE_FORM_URL;
+/** @deprecated use INTAKE_FORM_URL */
+export const CIRCLE_MAILTO = INTAKE_FORM_URL;
 
 export const NAV_LINKS: NavLink[] = [
   { label: "The Return", sectionId: "return-section" },

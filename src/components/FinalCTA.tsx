@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import { BOOKING_MAILTO } from "../types";
+import { INTAKE_FORM_URL } from "../types";
 
 export default function FinalCTA() {
   return (
@@ -50,7 +50,9 @@ export default function FinalCTA() {
           transition={{ delay: 0.35 }}
         >
           <a
-            href={BOOKING_MAILTO}
+            href={INTAKE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[#334233] hover:bg-[#1a2e1a] text-[#FAF6F0] font-accent font-semibold text-sm tracking-wider px-8 py-4 rounded-full transition-colors cursor-pointer shadow-lg"
           >
             Book a Free Discovery Call

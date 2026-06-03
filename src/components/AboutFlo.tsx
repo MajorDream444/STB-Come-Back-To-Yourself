@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import floImage from "../assets/images/regenerated_image_1780275760582.jpg";
-import { BOOKING_MAILTO } from "../types";
+import { INTAKE_FORM_URL } from "../types";
 
 const paragraphs = [
   "I spent years working in mental health nursing — holding space for others while quietly learning that the clinical system rarely had time for the most human part of healing.",
@@ -65,7 +65,9 @@ export default function AboutFlo() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            href={BOOKING_MAILTO}
+            href={INTAKE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
             className="inline-block mt-8 px-8 py-4 bg-[#334233] text-[#FAF6F0] font-sans text-sm rounded-full hover:bg-[#658365] transition-colors duration-200 cursor-pointer"
           >
             Book a Free Discovery Call

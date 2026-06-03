@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { OFFER_CARDS, BOOKING_MAILTO, CIRCLE_MAILTO } from "../types";
+import { OFFER_CARDS, INTAKE_FORM_URL } from "../types";
 
 export default function OfferCards() {
   return (
@@ -27,10 +27,6 @@ export default function OfferCards() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {OFFER_CARDS.map((card, i) => {
-            const href =
-              card.title === "Weekly Breath & Integration Circle"
-                ? CIRCLE_MAILTO
-                : BOOKING_MAILTO;
             const ctaLabel =
               card.price === "Free"
                 ? "Book a Discovery Call"
@@ -90,7 +86,9 @@ export default function OfferCards() {
                 </p>
 
                 <a
-                  href={href}
+                  href={INTAKE_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`font-sans text-sm px-6 py-3 rounded-full text-center transition-colors duration-200 cursor-pointer ${
                     card.isPrimary
                       ? "bg-[#C4924A] text-[#FAF6F0] hover:bg-[#E8D09A] hover:text-[#334233]"

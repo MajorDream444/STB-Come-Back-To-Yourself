@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import heroImage from "../assets/images/regenerated_image_1780277926011.jpg";
-import { BOOKING_MAILTO } from "../types";
+import { INTAKE_FORM_URL } from "../types";
 
 interface HeroProps {
   onGroundingOpen: () => void;
@@ -68,7 +68,9 @@ export default function Hero({ onGroundingOpen }: HeroProps) {
             className="flex flex-col sm:flex-row gap-4"
           >
             <a
-              href={BOOKING_MAILTO}
+              href={INTAKE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
               className="inline-block px-8 py-4 bg-[#C4924A] text-[#FAF6F0] font-sans text-sm rounded-full hover:bg-[#E8D09A] hover:text-[#334233] transition-colors duration-200 text-center cursor-pointer"
             >
               Book a Free Discovery Call

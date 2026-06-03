@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { CIRCLE_MAILTO } from "../types";
+import { INTAKE_FORM_URL } from "../types";
 
 export default function WeeklyCircle() {
   return (
@@ -110,7 +110,9 @@ export default function WeeklyCircle() {
             </p>
 
             <a
-              href={CIRCLE_MAILTO}
+              href={INTAKE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
               className="block w-full text-center font-sans text-sm px-6 py-3.5 rounded-full bg-[#334233] text-[#FAF6F0] hover:bg-[#1a2e1a] transition-colors duration-200 cursor-pointer"
             >
               Join the Weekly Circle

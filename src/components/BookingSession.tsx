@@ -105,7 +105,7 @@ export function BookingSession({ onClose, initialSessionType = "discovery" }: Bo
     setTimeout(() => {
       setLoading(false);
       setStep(4);
-      window.location.href = `mailto:hi@floortjedeliefde.com?subject=Booking Request — ${encodeURIComponent(activeSession.title)} from ${encodeURIComponent(name)}&body=${bodyLines}`;
+      window.location.href = `mailto:Floordeliefde21@gmail.com?subject=Booking Request — ${encodeURIComponent(activeSession.title)} from ${encodeURIComponent(name)}&body=${bodyLines}`;
     }, 800);
   };
 
