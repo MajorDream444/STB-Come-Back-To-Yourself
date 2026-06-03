@@ -2,6 +2,14 @@ import { motion } from "motion/react";
 import floImage from "../assets/images/regenerated_image_1780275760582.jpg";
 import { BOOKING_MAILTO } from "../types";
 
+const paragraphs = [
+  "I spent years working in mental health nursing — holding space for others while quietly learning that the clinical system rarely had time for the most human part of healing.",
+  "I also spent years in my own pattern of managing, pushing through, and performing wellness while something underneath stayed tight and unresolved.",
+  "My turning point came through the body. Not through more thinking or more strategies, but through the quiet, steady intelligence of breath — and the realization that my nervous system had been trying to communicate with me for years.",
+  "I discovered body-based approaches not as a trend, but as a doorway I hadn't known existed. Breathwork became the practice that changed everything — not because it fixed me, but because it taught me to stop fighting myself.",
+  "Now I create the space I once needed for other people. People who are tired of performing. People who want something real.",
+];
+
 export default function AboutFlo() {
   return (
     <section id="about" className="bg-[#E9EFE9] py-24 md:py-32">
@@ -28,13 +36,7 @@ export default function AboutFlo() {
           </motion.h2>
 
           <div className="space-y-5 font-sans text-base text-[#334233]/80 leading-relaxed">
-            {[
-              "I spent years working in mental health nursing — holding space for others while quietly learning that the clinical system rarely had time for the most human part of healing.",
-              "I also spent years in my own pattern of managing, pushing through, and performing wellness while something underneath stayed tight and unresolved.",
-              "My turning point came through the body. Not through more thinking or more strategies, but through the quiet, steady intelligence of breath — and the realization that my nervous system had been trying to communicate with me for years.",
-              "I discovered body-based approaches not as a trend, but as a doorway I hadn't known existed. Breathwork became the practice that changed everything — not because it fixed me, but because it taught me to stop fighting myself.",
-              "Now I create the space I once needed for other people. People who are tired of performing. People who want something real.",
-            ].map((para, i) => (
+            {paragraphs.map((para, i) => (
               <motion.p
                 key={i}
                 initial={{ opacity: 0, y: 16 }}

@@ -22,7 +22,7 @@ export default function FinalCTA() {
           transition={{ delay: 0.1 }}
           className="font-serif text-4xl md:text-6xl text-[#1a2e1a] leading-tight"
         >
-          You do not need the whole path today.
+          You Do Not Need The Whole Path Today
         </motion.h2>
 
         <motion.div
