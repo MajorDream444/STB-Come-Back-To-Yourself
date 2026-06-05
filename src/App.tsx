@@ -8,6 +8,7 @@ import WhyThisFeelsDifferent from "./components/WhyThisFeelsDifferent";
 import WeeklyCircle from "./components/WeeklyCircle";
 import OfferCards from "./components/OfferCards";
 import AboutFlo from "./components/AboutFlo";
+import FirstDoorwayBanner from "./components/FirstDoorwayBanner";
 import FloApproach from "./components/FloApproach";
 import Testimonials from "./components/Testimonials";
 import FinalCTA from "./components/FinalCTA";
@@ -72,6 +73,8 @@ export default function App() {
       </section>
 
       <AboutFlo />
+
+      <FirstDoorwayBanner />
 
       <FloApproach />
 
