@@ -81,17 +81,16 @@ export default function AboutFlo() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative overflow-hidden rounded-2xl"
+          className="relative"
         >
-          <img
-            src="/flo-about-rice-field.jpg"
-            alt="Flo in a rice field"
-            className="w-full h-80 md:h-[560px] object-cover object-top"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "/regenerated_image_1780275760582.jpg";
-            }}
-          />
-          <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#C4924A]/10 rounded-2xl -z-10" />
+          <div className="relative aspect-video w-full overflow-hidden rounded-[2rem] shadow-xl">
+            <img
+              src="/flo-about-rice-field.jpg"
+              alt="Flo walking through a rice field"
+              className="h-full w-full object-cover object-[center_35%]"
+            />
+          </div>
+          <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#C4924A]/10 rounded-2xl -z-10" />
         </motion.div>
       </div>
     </section>
