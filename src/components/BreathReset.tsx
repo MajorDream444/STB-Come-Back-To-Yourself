@@ -159,7 +159,7 @@ export function BreathReset({ onOpenLeadModal }: BreathResetProps) {
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-      window.location.href = `mailto:hi@floortjedeliefde.com?subject=3x5 Breath Reset Guide Request&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}`;
+      window.location.href = `mailto:Floordeliefde21@gmail.com?subject=3x5 Breath Reset Guide Request&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}`;
     }, 900);
   };
 
@@ -401,7 +401,7 @@ export function BreathReset({ onOpenLeadModal }: BreathResetProps) {
                 The 3x5 Breath Reset Guide
               </h4>
               <p className="text-xs text-sage-700 leading-relaxed mb-4">
-                Receive the offline sanctuary companion. Contains exact timings, somatic checks, and sensory anchors to return to yourself in 5 minutes, 3 times a day.
+                A simple coherent breathing practice to help you return to your body in five minutes, three times a day.
               </p>
 
               {submitted ? (
@@ -441,7 +441,7 @@ export function BreathReset({ onOpenLeadModal }: BreathResetProps) {
                     disabled={loading}
                     className="w-full bg-sage-800 hover:bg-sage-900 disabled:opacity-50 text-cream-50 font-accent font-medium tracking-wide py-2.5 px-4 rounded-lg text-xs transition-colors shadow-xs flex items-center justify-center gap-1.5"
                   >
-                    {loading ? "Preparing Somatic Package..." : "Get PDF + Companion Blueprint"}
+                    {loading ? "Sending request..." : "Request the Free Reset Guide"}
                   </button>
                 </form>
               )}

@@ -22,7 +22,7 @@ export default function FloApproach() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="font-serif text-4xl md:text-5xl text-[#1a2e1a] mb-4 text-center leading-tight"
         >
-          The Flo Approach
+          THE APPROACH
         </motion.h2>
 
         <motion.p

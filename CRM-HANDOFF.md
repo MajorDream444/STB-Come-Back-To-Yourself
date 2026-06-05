@@ -5,18 +5,33 @@ without making her feel like she is running a complicated business machine.
 
 ---
 
+## Live Links
+
+| Resource | URL |
+|----------|-----|
+| **Intake Form** | https://docs.google.com/forms/d/e/1FAIpQLSdO4Woi_W1SoCDs33ITJtaGUzV1sqtBmyFb1uznvw0Fg_7jlw/viewform?usp=header |
+| **Google Sheets CRM** | https://docs.google.com/spreadsheets/d/1SVbMQ8oFC5ZaRP_pLLzcskopmXbNXtfT9VyOkZGDKTo/edit?usp=sharing |
+| **Flo's email** | Floordeliefde21@gmail.com |
+| **Flo's WhatsApp** | +31 6 55797661 |
+
+---
+
 ## The Client Journey
+
+**The Google Form is now the single front door for all inquiries.**
 
 ```
 Website CTA
     ↓
-Free Discovery Call / Intake Form
+Google Form (single intake form for all requests)
     ↓
 Google Sheets CRM  ←  source of truth for everything below
     ↓
-Follow-up queue
+Flo manually reviews each submission
     ↓
-Client session
+Flo follows up by email or WhatsApp
+    ↓
+Discovery Call / Weekly Circle / Private Journey
     ↓
 Integration follow-up
     ↓

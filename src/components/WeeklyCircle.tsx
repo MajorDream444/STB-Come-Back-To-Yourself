@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { CIRCLE_MAILTO } from "../types";
+import { INTAKE_FORM_URL } from "../types";
 
 export default function WeeklyCircle() {
   return (
@@ -42,30 +42,14 @@ export default function WeeklyCircle() {
             className="space-y-6"
           >
             <p className="font-sans text-lg text-[#334233] leading-relaxed">
-              A simple weekly breath and integration circle for people who are
-              used to carrying a lot alone.
+              A simple weekly breath and integration circle for people who long for authentic human connection.
             </p>
 
             <div className="space-y-4 text-[#334233]/80 font-sans text-base leading-relaxed">
-              <p>This is not a performance space.</p>
-              <p>
-                It is a place to slow down, breathe, listen, and reconnect with
-                what is true.
-              </p>
+              <p>There is something magical about sharing our experiences and recognizing parts of ourselves in one another.</p>
+              <p>Come as you are.</p>
+              <p>Together, we remember.</p>
             </div>
-
-            <div className="border-l-2 border-[#C4924A] pl-5 space-y-2">
-              <p className="font-serif text-[#1a2e1a] text-lg italic">Come once.</p>
-              <p className="font-serif text-[#1a2e1a] text-lg italic">Come as you are.</p>
-              <p className="font-serif text-[#1a2e1a] text-lg italic">
-                No need to have the right words.
-              </p>
-            </div>
-
-            <p className="font-sans text-sm text-[#658365]">
-              Especially supportive for people who are used to carrying
-              everything alone.
-            </p>
           </motion.div>
 
           <motion.div
@@ -110,7 +94,9 @@ export default function WeeklyCircle() {
             </p>
 
             <a
-              href={CIRCLE_MAILTO}
+              href={INTAKE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
               className="block w-full text-center font-sans text-sm px-6 py-3.5 rounded-full bg-[#334233] text-[#FAF6F0] hover:bg-[#1a2e1a] transition-colors duration-200 cursor-pointer"
             >
               Join the Weekly Circle

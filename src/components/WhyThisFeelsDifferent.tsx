@@ -2,11 +2,15 @@ import { motion } from "motion/react";
 import fieldImage from "../assets/images/regenerated_image_1780274117711.jpg";
 
 const lines = [
-  "You do not need to arrive with the right words.",
-  "You do not need to know exactly what is wrong.",
-  "You do not need to have it figured out.",
-  "This work is not about becoming someone else. It is about creating enough safety to reconnect with what is already true.",
-  "Many people describe the experience as finally being able to exhale.",
+  "You do not need all the words.",
+  "You do not need to know exactly what is limiting you.",
+  "And it's okay if you do not have it all figured out.",
+  "This work is not about proving anything.",
+  "It is not about becoming someone else.",
+  "But rather, what happens when you let go of the masks, the stories, and the protective patterns that have been keeping you small?",
+  "Find and reconnect with your truth.",
+  "I am not here to give you the answers.",
+  "I guide you back to your own wisdom and help you reclaim your power.",
 ];
 
 export default function WhyThisFeelsDifferent() {
@@ -23,7 +27,7 @@ export default function WhyThisFeelsDifferent() {
           <img
             src={fieldImage}
             alt="Peaceful nature scene"
-            className="w-full h-80 md:h-[480px] object-cover rounded-2xl"
+            className="w-full h-80 md:h-[480px] object-cover object-top rounded-2xl"
           />
           <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-[#C4924A]/10 rounded-2xl -z-10" />
         </motion.div>
@@ -46,7 +50,7 @@ export default function WhyThisFeelsDifferent() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-serif text-4xl md:text-5xl text-[#1a2e1a] mb-8 leading-tight"
           >
-            A Space To Be Honest
+            OUT OF THE MIND, INTO THE BODY
           </motion.h2>
 
           <div className="space-y-5 font-sans text-base text-[#334233]/80 leading-relaxed">

@@ -36,14 +36,14 @@ export function BookingSession({ onClose, initialSessionType = "discovery" }: Bo
     reset: {
       title: "Nervous System Reset",
       duration: "30–45 minutes",
-      price: "€75",
+      price: "€111",
       accent: "Regulation",
       desc: "A gentle, physical introduction focused on regulation, grounding, body awareness, and down-regulation."
     },
     journey: {
       title: "Private Breathwork Journey",
       duration: "90 minutes",
-      price: "€150",
+      price: "€188",
       accent: "Signature Offer",
       desc: "Arrival • Intention • Conscious connected breathwork • Integration • Grounded Reflection (Signature Experience)."
     }
@@ -105,7 +105,7 @@ export function BookingSession({ onClose, initialSessionType = "discovery" }: Bo
     setTimeout(() => {
       setLoading(false);
       setStep(4);
-      window.location.href = `mailto:hi@floortjedeliefde.com?subject=Booking Request — ${encodeURIComponent(activeSession.title)} from ${encodeURIComponent(name)}&body=${bodyLines}`;
+      window.location.href = `mailto:Floordeliefde21@gmail.com?subject=Booking Request — ${encodeURIComponent(activeSession.title)} from ${encodeURIComponent(name)}&body=${bodyLines}`;
     }, 800);
   };
 

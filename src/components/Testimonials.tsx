@@ -1,10 +1,17 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Star } from "lucide-react";
 import { TESTIMONIALS } from "../types";
 
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
+  const [expanded, setExpanded] = useState(false);
+
+  const t = TESTIMONIALS[current];
+
+  const handleNext = (i: number) => {
+    setCurrent(i);
+    setExpanded(false);
+  };
 
   return (
     <section id="testimonials" className="bg-[#334233] py-24 md:py-32">
@@ -29,7 +36,7 @@ export default function Testimonials() {
           Words From The Work
         </motion.h2>
 
-        <div className="relative min-h-[220px] flex flex-col justify-center">
+        <div className="relative min-h-[200px] flex flex-col justify-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -39,24 +46,22 @@ export default function Testimonials() {
               transition={{ duration: 0.5 }}
               className="space-y-6"
             >
-              <div className="flex justify-center gap-1">
-                {[0, 1, 2, 3, 4].map((s) => (
-                  <Star key={s} className="w-4 h-4 fill-[#C4924A] text-[#C4924A]" />
-                ))}
-              </div>
-
               <p className="font-serif text-xl md:text-2xl text-[#FAF6F0]/90 italic leading-relaxed max-w-2xl mx-auto">
-                "{TESTIMONIALS[current].quote}"
+                "{expanded ? t.text : t.shortText}"
               </p>
 
-              <div>
-                <p className="font-accent text-xs tracking-widest uppercase text-[#E8D09A] font-semibold">
-                  {TESTIMONIALS[current].name}
-                </p>
-                <p className="font-sans text-sm text-[#FAF6F0]/50 mt-1">
-                  {TESTIMONIALS[current].role}, {TESTIMONIALS[current].location}
-                </p>
-              </div>
+              {t.text !== t.shortText && (
+                <button
+                  onClick={() => setExpanded(!expanded)}
+                  className="font-sans text-xs text-[#E8D09A]/70 hover:text-[#E8D09A] transition-colors underline underline-offset-2 cursor-pointer"
+                >
+                  {expanded ? "Read less" : "Read more"}
+                </button>
+              )}
+
+              <p className="font-accent text-xs tracking-widest uppercase text-[#E8D09A] font-semibold">
+                {t.name}
+              </p>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -65,7 +70,7 @@ export default function Testimonials() {
           {TESTIMONIALS.map((_, i) => (
             <button
               key={i}
-              onClick={() => setCurrent(i)}
+              onClick={() => handleNext(i)}
               className={`rounded-full transition-all duration-300 cursor-pointer ${
                 i === current
                   ? "w-8 h-2 bg-[#C4924A]"

@@ -15,7 +15,7 @@ import Footer from "./components/Footer";
 import { BreathReset } from "./components/BreathReset";
 import { GroundingOverlay } from "./components/GroundingOverlay";
 import { AmbientSoundscape } from "./components/AmbientSoundscape";
-import { BOOKING_MAILTO } from "./types";
+import { INTAKE_FORM_URL } from "./types";
 
 export default function App() {
   const [groundingOpen, setGroundingOpen] = useState(false);
@@ -95,10 +95,12 @@ export default function App() {
                 Free Discovery Call — Start Here
               </p>
               <a
-                href={BOOKING_MAILTO}
+                href={INTAKE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#C4924A] hover:bg-[#E8D09A] hover:text-[#334233] text-[#FAF6F0] font-accent font-semibold text-xs tracking-widest px-5 py-2.5 rounded-full transition-colors cursor-pointer whitespace-nowrap"
               >
-                Book a Call
+                Start Here
               </a>
             </div>
           </motion.div>
@@ -110,7 +112,7 @@ export default function App() {
         onClose={() => setGroundingOpen(false)}
         onOpenBooking={() => {
           setGroundingOpen(false);
-          window.location.href = BOOKING_MAILTO;
+          window.location.href = INTAKE_FORM_URL;
         }}
       />
 

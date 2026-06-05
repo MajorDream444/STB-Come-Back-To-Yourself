@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
-import { NAV_LINKS, BOOKING_MAILTO } from "../types";
+import { NAV_LINKS, INTAKE_FORM_URL } from "../types";
 
 function scrollTo(id: string) {
   const el = document.getElementById(id);
@@ -51,7 +51,9 @@ export default function Navigation({ mobileMenuOpen, setMobileMenuOpen }: Naviga
 
         <div className="hidden md:block">
           <a
-            href={BOOKING_MAILTO}
+            href={INTAKE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
             className="py-2.5 px-6 rounded-full border border-[#334233] text-[#334233] text-xs tracking-widest uppercase font-medium hover:bg-[#334233] hover:text-[#FAF6F0] transition-all cursor-pointer"
           >
             Book a Call
@@ -87,7 +89,9 @@ export default function Navigation({ mobileMenuOpen, setMobileMenuOpen }: Naviga
                 </button>
               ))}
               <a
-                href={BOOKING_MAILTO}
+                href={INTAKE_FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-2 w-full text-center py-3.5 rounded-full bg-[#334233] text-[#FAF6F0] text-xs tracking-widest uppercase font-semibold"
               >

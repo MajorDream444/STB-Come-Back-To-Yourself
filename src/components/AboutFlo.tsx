@@ -1,13 +1,26 @@
 import { motion } from "motion/react";
-import floImage from "../assets/images/regenerated_image_1780275760582.jpg";
-import { BOOKING_MAILTO } from "../types";
+import { INTAKE_FORM_URL } from "../types";
 
 const paragraphs = [
-  "I spent years working in mental health nursing — holding space for others while quietly learning that the clinical system rarely had time for the most human part of healing.",
-  "I also spent years in my own pattern of managing, pushing through, and performing wellness while something underneath stayed tight and unresolved.",
-  "My turning point came through the body. Not through more thinking or more strategies, but through the quiet, steady intelligence of breath — and the realization that my nervous system had been trying to communicate with me for years.",
-  "I discovered body-based approaches not as a trend, but as a doorway I hadn't known existed. Breathwork became the practice that changed everything — not because it fixed me, but because it taught me to stop fighting myself.",
-  "Now I create the space I once needed for other people. People who are tired of performing. People who want something real.",
+  "For many years, I felt lost.",
+  "I struggled with depression, anxiety, emotional eating, and a deep disconnection from myself.",
+  "No matter how much I tried to push through or understand what was wrong, I would always end up in emotional breakdowns again.",
+  "Looking back, I can see how much of my life was shaped by conditioning, expectations, and patterns that were never truly mine.",
+  "I spent years suppressing emotions, ignoring the signals of my body, and searching for answers outside of myself.",
+  "Eventually, my body spoke louder.",
+  "Burnout, chronic pain, and complete exhaustion forced me to stop and listen.",
+  "I genuinely loved my job as a psychiatric nurse, but it also took its toll, supporting others through deep struggles while navigating my own.",
+  "Over the years, breathwork, somatic practices, therapy, coaching, and a deep commitment to self-inquiry became part of my path.",
+  "They helped me understand what my body had been trying to tell me for years. They helped me meet parts of myself that I had spent a lifetime avoiding.",
+  "This journey did not lead me to perfection.",
+  "It led me back to my true self.",
+  "Today, I feel more grounded and at peace than I once believed possible.",
+  "And at the same time, I know that growth never truly ends.",
+  "I am still learning. Still uncovering new layers.",
+  "But now, I meet those layers with curiosity and compassion instead of self-judgment.",
+  "That is why I love this work. I can combine my clinical background with my own lived experience.",
+  "I do not have all the answers, but I know what it feels like to lose yourself — and what it feels like to find your way back.",
+  "The goal is not perfection. The goal is freedom.",
 ];
 
 export default function AboutFlo() {
@@ -32,7 +45,7 @@ export default function AboutFlo() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-serif text-4xl md:text-5xl text-[#1a2e1a] mb-8 leading-tight"
           >
-            My Path Back To Myself
+            MY PATH BACK TO MYSELF
           </motion.h2>
 
           <div className="space-y-5 font-sans text-base text-[#334233]/80 leading-relaxed">
@@ -42,30 +55,21 @@ export default function AboutFlo() {
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 * i }}
+                transition={{ duration: 0.5, delay: 0.05 * i }}
               >
                 {para}
               </motion.p>
             ))}
           </div>
 
-          <motion.blockquote
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-8 pl-6 border-l-2 border-[#C4924A] font-serif text-xl text-[#334233] italic"
-          >
-            "I am not here to convince you of a fantasy version of yourself. I
-            am here to create a space where you can finally exhale."
-          </motion.blockquote>
-
           <motion.a
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            href={BOOKING_MAILTO}
+            href={INTAKE_FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block mt-8 px-8 py-4 bg-[#334233] text-[#FAF6F0] font-sans text-sm rounded-full hover:bg-[#658365] transition-colors duration-200 cursor-pointer"
           >
             Book a Free Discovery Call
@@ -77,12 +81,15 @@ export default function AboutFlo() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative"
+          className="relative overflow-hidden rounded-2xl"
         >
           <img
-            src={floImage}
-            alt="Flo under palms"
-            className="w-full h-80 md:h-[560px] object-cover rounded-2xl"
+            src="/flo-about-rice-field.jpg"
+            alt="Flo in a rice field"
+            className="w-full h-80 md:h-[560px] object-cover object-top"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = "/regenerated_image_1780275760582.jpg";
+            }}
           />
           <div className="absolute -top-4 -left-4 w-24 h-24 bg-[#C4924A]/10 rounded-2xl -z-10" />
         </motion.div>
