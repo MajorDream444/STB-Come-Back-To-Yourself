@@ -36,14 +36,14 @@ export function BookingSession({ onClose, initialSessionType = "discovery" }: Bo
     reset: {
       title: "Nervous System Reset",
       duration: "30–45 minutes",
-      price: "€75",
+      price: "€111",
       accent: "Regulation",
       desc: "A gentle, physical introduction focused on regulation, grounding, body awareness, and down-regulation."
     },
     journey: {
       title: "Private Breathwork Journey",
       duration: "90 minutes",
-      price: "€150",
+      price: "€188",
       accent: "Signature Offer",
       desc: "Arrival • Intention • Conscious connected breathwork • Integration • Grounded Reflection (Signature Experience)."
     }
