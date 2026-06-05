@@ -20,7 +20,7 @@ export default function Hero({ onGroundingOpen }: HeroProps) {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Women in Bali rice field"
+          alt="A peaceful rice field"
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#1a2e1a]/85 via-[#1a2e1a]/60 to-[#1a2e1a]/20" />
@@ -34,7 +34,7 @@ export default function Hero({ onGroundingOpen }: HeroProps) {
             transition={{ duration: 0.6 }}
             className="font-accent text-xs tracking-widest uppercase text-[#E8D09A] mb-6"
           >
-            Somatic Breathwork — Bali & Online
+            Somatic Breathwork — In Person & Online
           </motion.p>
 
           <motion.h1
@@ -55,9 +55,7 @@ export default function Hero({ onGroundingOpen }: HeroProps) {
             <p>Most people don't need another strategy.</p>
             <p>They need a place where they can stop fighting themselves.</p>
             <p>
-              Through breathwork, body awareness, and guided integration, Flo
-              creates a space where you can slow down, reconnect, and return to
-              yourself.
+              Through breathwork, presence, and body awareness, I create a space where you can slow down, reconnect, and return to yourself.
             </p>
           </motion.div>
 

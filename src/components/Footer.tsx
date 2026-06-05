@@ -40,7 +40,7 @@ export default function Footer() {
           </a>
           <div className="flex items-center gap-2 font-sans text-sm">
             <MapPin className="w-4 h-4 text-[#C4924A] shrink-0" />
-            <span>Ubud, Bali &amp; Online Worldwide</span>
+            <span>Online Worldwide</span>
           </div>
           <p className="font-sans text-xs text-[#FAF6F0]/40 leading-relaxed pt-1">
             Flo personally reviews each form submission and follows up directly
@@ -54,8 +54,8 @@ export default function Footer() {
           </p>
           <ul className="space-y-2 font-sans text-sm">
             <li>Discovery Call — Free</li>
-            <li>Weekly Breath &amp; Integration Circle</li>
-            <li>Private Breathwork Journey — €150</li>
+            <li>Nervous System Reset — €111</li>
+            <li>Private Breathwork Journey — €188</li>
           </ul>
           <a
             href={INTAKE_FORM_URL}

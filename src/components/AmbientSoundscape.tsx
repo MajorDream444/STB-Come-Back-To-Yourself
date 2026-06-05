@@ -75,7 +75,7 @@ export function AmbientSoundscape() {
     return buffer;
   };
 
-  // 1. Play Golden Bali Wind (swelling bandpass pink/white noise)
+  // 1. Play ambient wind sound
   const playWind = (ctx: AudioContext, mainGain: GainNode) => {
     const buffer = createNoiseBuffer(ctx);
     const sourceNode = ctx.createBufferSource();
@@ -305,7 +305,7 @@ export function AmbientSoundscape() {
                 >
                   <span className="flex items-center gap-2">
                     <Wind className="w-3.5 h-3.5 text-[#5e7d5e]" />
-                    <span>Bali Palm Wind</span>
+                    <span>Gentle Wind</span>
                   </span>
                   <span className="text-[8px] font-mono text-sage-400">450Hz</span>
                 </button>
