@@ -2,11 +2,23 @@ export default function FirstDoorwayBanner() {
   return (
     <section className="bg-[#FAF6F0] px-4 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
-        <div className="overflow-hidden rounded-[2rem] border border-[#658365]/10 shadow-xl">
+        <div
+          className="overflow-hidden rounded-[2rem] border border-[#658365]/10 shadow-xl"
+          style={{ minHeight: "420px" }}
+        >
           <img
-            src="/assets/flo-first-doorway-banner.png"
+            src="/images/flo-first-doorway.jpg"
             alt="Flo First Doorway — Nothing was lost, the first doorway is getting clearer"
-            className="h-auto w-full"
+            loading="eager"
+            fetchPriority="high"
+            style={{
+              width: "100%",
+              height: "100%",
+              minHeight: "420px",
+              objectFit: "cover",
+              objectPosition: "center",
+              display: "block",
+            }}
           />
         </div>
       </div>
