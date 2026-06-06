@@ -7,7 +7,7 @@ export default function FirstDoorwayBanner() {
           style={{ minHeight: "420px" }}
         >
           <img
-            src="/images/flo-first-doorway.jpg"
+            src="/flo-first-doorway.jpg"
             alt="Flo First Doorway — Nothing was lost, the first doorway is getting clearer"
             loading="eager"
             fetchPriority="high"
