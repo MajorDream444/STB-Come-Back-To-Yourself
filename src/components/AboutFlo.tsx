@@ -93,8 +93,8 @@ export default function AboutFlo() {
         >
           <div className="overflow-hidden rounded-3xl shadow-xl">
             <img
-              src="/flo-first-doorway.jpg"
-              alt="Flo smiling in a natural setting"
+              src="/flo-rice-field.jpg"
+              alt="Flo in a rice field"
               className="w-full h-[480px] md:h-[560px] object-cover object-top"
             />
           </div>
