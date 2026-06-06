@@ -8,7 +8,7 @@ export default function FirstDoorwayBanner() {
         >
           <img
             src="/flo-first-doorway.jpg"
-            alt="Flo First Doorway — Nothing was lost, the first doorway is getting clearer"
+            alt="Flo First Doorway — You already carry the answers within, the breath is the doorway"
             loading="eager"
             fetchPriority="high"
             style={{
