@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Council Verdict</title>
+<style>
+  :root{
+    --bg:#faf9f7; --surface:#fff; --ink:#1c1c1a; --muted:#5d5d57; --faint:#8a8a82;
+    --line:#e4e2dd; --accent:#8a6d3b; --accent-soft:#f5efe3;
+    --agree:#4a6b4a; --clash:#9a5b33; --blind:#5a5a8a;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#161613; --surface:#1f1f1c; --ink:#ece9e3; --muted:#a8a69e; --faint:#7d7b74;
+      --line:#32312c; --accent:#c9a76a; --accent-soft:#2a2520;
+      --agree:#8fb98f; --clash:#d99a6c; --blind:#9a9ad0;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#161613; --surface:#1f1f1c; --ink:#ece9e3; --muted:#a8a69e; --faint:#7d7b74;
+    --line:#32312c; --accent:#c9a76a; --accent-soft:#2a2520;
+    --agree:#8fb98f; --clash:#d99a6c; --blind:#9a9ad0;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.65 ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:56px 16px 96px}
+  header{border-bottom:1px solid var(--line);padding-bottom:28px;margin-bottom:40px}
+  .eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 12px}
+  h1{font-size:clamp(28px,5vw,40px);line-height:1.15;margin:0 0 14px;letter-spacing:-.02em;font-weight:650}
+  .sub{color:var(--muted);margin:0;font-size:15px}
+  .verdict{
+    background:var(--accent-soft);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:10px;padding:26px 28px;margin:0 0 40px;
+  }
+  .verdict h2{margin:0 0 6px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .verdict .headline{font-size:22px;font-weight:650;line-height:1.3;margin:0 0 14px;letter-spacing:-.01em}
+  .verdict p{margin:0 0 10px;color:var(--muted);font-size:15px}
+  .verdict p:last-child{margin-bottom:0}
+  .verdict strong{color:var(--ink)}
+  h2.sec{font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin:44px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line);font-weight:700}
+  .agree h2.sec,h2.sec.agree{color:var(--agree)}
+  h2.sec.clash{color:var(--clash)}
+  h2.sec.blind{color:var(--blind)}
+  ul{padding-left:20px;margin:0 0 18px}
+  li{margin-bottom:9px;color:var(--muted)}
+  li strong{color:var(--ink)}
+  p{color:var(--muted)}
+  p strong{color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:18px 0 26px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .card .name{font-weight:650;font-size:14px;margin:0 0 4px}
+  .card .pos{font-size:13px;color:var(--muted);margin:0}
+  .tag{display:inline-block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:2px 8px;border-radius:99px;margin-bottom:8px}
+  .t-diag{background:var(--agree);color:var(--bg)}
+  .t-other{background:var(--clash);color:var(--bg)}
+  table{width:100%;border-collapse:collapse;margin:8px 0 26px;font-size:14px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:700}
+  td{color:var(--muted)} td strong{color:var(--ink)}
+  details{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-bottom:10px;overflow:hidden}
+  summary{cursor:pointer;padding:14px 18px;font-weight:600;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--accent);font-size:18px;font-weight:400;flex-shrink:0}
+  details[open] summary::after{content:"–"}
+  details[open] summary{border-bottom:1px solid var(--line)}
+  .body{padding:16px 18px;color:var(--muted);font-size:15px}
+  .body p{margin:0 0 12px}.body p:last-child{margin-bottom:0}
+  .first{background:var(--surface);border:1px solid var(--accent);border-radius:10px;padding:24px 26px;margin:34px 0 0}
+  .first .lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 10px}
+  .first .act{font-size:19px;font-weight:650;line-height:1.35;margin:0 0 12px;letter-spacing:-.01em}
+  footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--faint);font-size:13px}
+  .note{font-size:13px;color:var(--faint);font-style:italic;margin-top:-6px;margin-bottom:22px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">LLM Council · 14 October 2026</p>
+  <h1>The smallest repeatable thing SPARK LAB–STB can sell</h1>
+  <p class="sub">Five advisors, independent · anonymised peer review · chairman synthesis</p>
+</header>
+
+<div class="verdict">
+  <h2>Council Verdict</h2>
+  <p class="headline">Sell a diagnostic, not an outcome. The Booking Path Audit is the wedge — the defect taxonomy underneath it is the actual product.</p>
+  <p><strong>Primary:</strong> Booking Path Audit. Five working days, fixed scope. Access to their site, calendar and inbox; you deliver a severity-ranked defect list and a two-week fix plan. No deployment, no payments, no health data.</p>
+  <p><strong>Secondary:</strong> the fix, scoped off the audit's own defect list, €1,500–€3,000 per instance. The audit sells the fix. Nothing pre-built.</p>
+  <p><strong>Pricing experiment:</strong> three at €450, then two at €900. Watch close rate, not revenue.</p>
+  <p><strong>Kill criteria:</strong> fewer than three paid audits by day 21, or audits averaging over twelve hours, means stop.</p>
+</div>
+
+<h2 class="sec agree">Where the council agrees</h2>
+<p>Four of five advisors independently reached the same structural answer, by the same reasoning. This is the session's highest-confidence signal.</p>
+<ul>
+  <li><strong>Sell diagnosis, not lift.</strong> With zero outcome evidence, any offer whose name promises improvement is a claim that cannot be supported — and the first paying client becomes the second unpaid R&amp;D subject, this time with refund risk and the network watching.</li>
+  <li><strong>Candidates 2 and 3 are not sellable now.</strong> Both presuppose a configurable multi-practitioner template that does not exist. One dark reference build is not a template.</li>
+  <li><strong>Kill layers 4–5 of the Practitioner Business OS.</strong> Announcing a platform creates delivery debt serviced for free.</li>
+  <li><strong>Drop the health-data checklist permanently.</strong> Three advisors reached GDPR Article 9 independently.</li>
+  <li><strong>Done-for-you before platform.</strong> No advisor supported self-serve first.</li>
+</ul>
+
+<div class="grid">
+  <div class="card"><span class="tag t-diag">Diagnostic</span><p class="name">The Contrarian</p><p class="pos">Clarity Blueprint €350–450. All three candidates are outcome claims you can't make. Flo is a retention signal, not a testimonial.</p></div>
+  <div class="card"><span class="tag t-diag">Diagnostic</span><p class="name">First Principles</p><p class="pos">You have no proof you can deliver to a paying stranger. The intake is the only asset with repeat evidence of being wanted.</p></div>
+  <div class="card"><span class="tag t-diag">Diagnostic</span><p class="name">The Expansionist</p><p class="pos">Blueprint €450–750. Thirty of them is a proprietary corpus. Sell in batches of 8–12 to retreat centres and certification schools.</p></div>
+  <div class="card"><span class="tag t-other">Naming</span><p class="name">The Outsider</p><p class="pos">"Stop the Bleed" sold to people whose professional identity is calm. Nobody wakes up wanting an OS. Say: "people message me and I lose them."</p></div>
+  <div class="card"><span class="tag t-diag">Diagnostic</span><p class="name">The Executor</p><p class="pos">Booking Path Audit €450. The audit you ran this week is the sample. Written kill criteria. <strong>All three reviewers picked this.</strong></p></div>
+</div>
+
+<h2 class="sec clash">Where the council clashes</h2>
+<table>
+  <tr><th>Question</th><th>One side</th><th>The other</th></tr>
+  <tr>
+    <td><strong>What gets diagnosed</strong></td>
+    <td>The <em>business</em> — positioning, offer, buyer. Backed by the one asset with repeat evidence. No infrastructure surface.</td>
+    <td>The <em>funnel</em> — a defect list from their real site, calendar, inbox. Narrower, but backed by an artifact that demonstrably exists and is far easier for a buyer to judge.</td>
+  </tr>
+  <tr>
+    <td><strong>Naming</strong></td>
+    <td>Four advisors kept the internal vocabulary.</td>
+    <td>One argued the whole lexicon repels the buyer. Two reviewers agreed; nobody else raised it.</td>
+  </tr>
+  <tr>
+    <td><strong>Price</strong></td>
+    <td>€300 floor.</td>
+    <td>€900 ceiling. Nobody anchored to the operator's own cost floor.</td>
+  </tr>
+</table>
+
+<h2 class="sec blind">Blind spots the peer review caught</h2>
+<p class="note">These emerged only in the anonymised review round — no advisor saw them alone.</p>
+<ul>
+  <li><strong>"Repeatable" was never actually answered.</strong> A one-shot diagnostic has no repeat purchase; the fix tier is custom labour capped by founder hours. Two reviewers independently noted all five advisors quietly answered a different question than the one asked.</li>
+  <li><strong>Nobody priced the operator's hourly floor.</strong> Five audits at €450 is €2,250/month. No advisor asked what Major needs to earn, so none tested whether the offer is viable at all.</li>
+  <li><strong>Theo and Sheetal completed a <em>free</em> intake.</strong> Every "invoice them" recommendation rests on an untested free-to-paid conversion. They are friends — as Flo was.</li>
+  <li><strong>Demand was assumed, never specified.</strong> Every plan opens with "ten conversations," with no channel named beyond "ask people," in a thin Bali-local network that just lost its only pilot.</li>
+  <li><strong>Consent.</strong> Using the Flo audit as a sample needs her permission even anonymised. She is disengaged, not neutral.</li>
+  <li><strong>No entity, invoicing or refund policy.</strong> A solo founder in Bali invoicing EUR to EU practitioners raises tax and GDPR-controller questions; a first buyer needs a bounded guarantee to close.</li>
+</ul>
+
+<h2 class="sec">The chairman's departure from the council</h2>
+<p>Every advisor treated the diagnostic as the whole answer, and the peer review round proved them wrong: a diagnostic is not repeatable, which is precisely what was asked. So the audit is the <strong>wedge</strong>, not the product.</p>
+<p>The repeatable asset is the <strong>defect taxonomy</strong> underneath it — the same severity-ranked checklist applied to every practitioner, accumulating into something that eventually runs semi-automatically through HAMAL. Sell audits to build the taxonomy. Do not announce it, do not price it yet, and do not confuse it with the platform.</p>
+
+<h2 class="sec">Advisor responses in full</h2>
+<details><summary>The Contrarian</summary><div class="body"><p>The fatal flaw isn't which offer — it's that all three are priced as outcome claims you cannot make. You have zero conversion data, zero bookings, zero revenue, one undeployed site whose booking component never mounted and which invented fake scarcity. Sell any of these and your first paying client becomes your second unpaid R&amp;D subject.</p><p>Worse: your pilot didn't just fail to pay, she disengaged and left. That's a retention signal, not a testimonial. You cannot reference Flo.</p><p>Kill all three candidates as named. Kill layers 4 and 5 of the OS — vapor that creates delivery debt you'll service for free.</p><p><strong>Primary:</strong> Clarity Blueprint. €350–450, 5 days, no infrastructure, no health data, no GDPR processor role, no code. <strong>Secondary:</strong> one live page with a real form to a real inbox, €800–1,200 — a deliverable, not an outcome. <strong>Pricing:</strong> €300/€450/€600 across three people; see where the "yes" stops.</p><p><strong>Two hard constraints:</strong> never touch health data without a DPA and lawful basis — Art. 9, uninsurable for a solo operator. And strip every fake-scarcity and fake-confirmation pattern from the reference code before showing anyone; that's consumer protection, not a bug.</p></div></details>
+<details><summary>The First Principles Thinker</summary><div class="body"><p>You're asking "which of three offers do I sell?" when the actual problem is: you have no proof you can deliver anything to a paying stranger. Flo wasn't a client, she was a friend who let you practise, and the artifact was a dead deployment with fake scarcity counters in it. That's not a pilot — it's a prototype you never shipped.</p><p>Strip it down. You own exactly one asset that works: a structured intake that converts a practitioner's fog into a legible picture of their own business. Theo and Sheetal both completed it. That is the only thing with repeat evidence of being wanted.</p><p><strong>Primary:</strong> Practitioner Clarity Diagnostic. 5 days, 90-minute call plus intake, written blueprint with a prioritised fix list. No code, no deployment, no health data. €450. <strong>Secondary:</strong> one single-defect repair — not a website, one thing — €900–1,500.</p><p><strong>30 days:</strong> ten conversations, six sold, six delivered. Then ask each buyer: "would you pay again for the repair?" Their yes is your first real evidence. Build the platform when ten people have paid you to want it.</p></div></details>
+<details><summary>The Expansionist</summary><div class="body"><p>The council keeps staring at the dead website. That's not the asset. The Client Clarity Intake → Blueprint pipeline is: it already works, needs no deployment, has no GDPR surface, and produces a sellable artifact in days.</p><p><strong>Primary:</strong> STB Clarity Blueprint, €450–750, 7 days, under four hours of human time. Nobody asks a diagnostician for conversion-lift case studies. <strong>Secondary:</strong> Conversion Sprint €1.5–2.5k, sold only off the Blueprint.</p><p><strong>What everyone is undervaluing:</strong> every Blueprint deposits structured data into one schema. Thirty of them is a proprietary corpus on how independent practitioners actually monetise — the substrate for the platform, priced later as benchmarking.</p><p><strong>The adjacent upside:</strong> stop selling one practitioner at a time. Sheetal has students. Bali retreat centres and certification schools graduate cohorts with no business. Sell in batches of 8–12 to the aggregator — same hours, 10x revenue, pre-warmed referral.</p></div></details>
+<details><summary>The Outsider</summary><div class="body"><p>I don't know what any of this is called, and that's the finding.</p><p>"STB" stands for "Stop the Bleed." You are telling a breathwork teacher in Bali that she is haemorrhaging. "Business Pressure Test." "Trip Wire Detector." "Doorkeeper." "Build While You Heal." This is emergency-room language sold to people whose entire professional identity is calm. A stranger thinks: this man thinks I'm dying, and he's excited about it. The one artifact you shipped had fake scarcity and a fake confirmation screen on it — in a trust-based category. That isn't a bug, it's the same instinct as the naming.</p><p>"SPARK LAB–STB" is not a brand, it's an internal file path. HAMAL means nothing to a buyer. Nobody wakes up wanting an OS.</p><p><strong>Primary:</strong> the one thing a stranger instantly understands — "People message me and I lose them. Fix my inquiry-to-booked-call path in two weeks." <strong>30 days:</strong> delete every internal codename from anything a client sees. Lead with the symptom they'd say out loud, not the trauma metaphor you chose for them.</p></div></details>
+<details><summary>The Executor — selected strongest by all three reviewers</summary><div class="body"><p>Two of three candidates are fantasies requiring a template that does not exist. One reference build, now dark, is not a template; building it is 60+ days of solo engineering with zero revenue. Dead on arrival for a 30-day window.</p><p><strong>Primary:</strong> the Conversion Sprint rescoped as a diagnostic — the Booking Path Audit. Fixed scope, 5 working days, access to their site/calendar/inbox, a severity-ranked defect list with a two-week fix plan. You just proved you can do this; the audit run this week is your sample. No deployment, hosting, payments or health data — so no GDPR exposure, because you handle no client-of-client data.</p><p>Monday morning: point stb-doorkeeper at 10 practitioners in your network, book 5 audits at €450. Three at €450, two at €900. <strong>Secondary:</strong> the fix, scoped off the audit's own defect list, €1,500–3,000. The audit sells the fix; nothing to pre-build.</p><p><strong>Kill criteria, written down now:</strong> fewer than 3 paid audits by day 21, or audits averaging over 12 hours each, means the offer is not repeatable and you stop.</p></div></details>
+
+<h2 class="sec">Peer review highlights</h2>
+<details><summary>All three reviews — verdicts and what everyone missed</summary><div class="body">
+<p><strong>Unanimous strongest: the Executor.</strong> "The only response that ships against an existing asset." "The only response with falsifiable commercial discipline." "The only response whose primary offer is backed by an artifact that already exists in deliverable form, so the first buyer is not funding R&amp;D."</p>
+<p><strong>Biggest blind spot: the Expansionist (two reviewers).</strong> The aggregator channel treats batch delivery as near-free revenue while ignoring that a cohort is a reputational single point of failure for an operator with zero outcome evidence — one bad cohort kills the referral source. Aggregators buy proven curriculum and their sales cycles run months. Highest-leverage claim, thinnest support.</p>
+<p><strong>One reviewer instead named the Outsider:</strong> its naming critique is correct and unique, but it then prescribes a two-week <em>fix</em> — exactly the outcome promise the evidence cannot support. It diagnoses the brand and misses the evidence problem.</p>
+<p><strong>What all five missed</strong> is listed in the blind-spots section above: repeatability, the hourly floor, free-to-paid conversion, demand channel, consent, and the entity/refund questions.</p>
+</div></details>
+
+<div class="first">
+  <p class="lbl">The one thing to do first</p>
+  <p class="act">Write the sample Booking Path Audit against a site you fully control — and price your own floor on the same page.</p>
+  <p>Not Flo's: hers needs consent you don't have, and she is disengaged rather than neutral. Use one of your own properties, or a public site you have standing to analyse. The audit you produced this week already proves the deliverable is real; what's missing is a version you can legally show a stranger, and the single number that tells you whether five of these a month is a business or a bridge.</p>
+  <p>Everything else in the 30-day plan depends on that one artifact existing.</p>
+</div>
+
+<footer>
+  Council run 14 October 2026 · 5 advisors, 3 peer reviewers, 1 chairman ·
+  Full transcript: <code>council-transcript-20261014.md</code><br>
+  Advisors are independent model instances arguing assigned positions; their claims are arguments, not verified facts.
+</footer>
+
+</div>
+</body>
+</html>
