@@ -27,13 +27,12 @@ SPARK LAB–STB, and the Floortje de Liefde website.
 
 ## Three live defects found in the Flo site (not ECC-caused)
 
-- **P-01 [HIGH]** An **incomplete migration**. `INTAKE_FORM_URL` is imported by
-  8 files and the deprecated `*_MAILTO` constants were already re-pointed at the
-  Google Form — but `BookingSession.tsx` imports nothing from `types.ts` and
-  hardcodes `mailto:` to Gmail at line 108. The primary conversion surface
-  (11 controls, 0 `href`) is the one the migration missed, and because the
-  address is hardcoded, fixing the shared constant cannot reach it.
-  **Bookings from the main booking UI never reach the CRM.**
+- **P-01 [CORRECTED]** Untracked `mailto:` submissions. *The original audit
+  claimed the booking UI was live and losing inquiries — that was wrong.*
+  `BookingSession.tsx` is **not mounted**, so nothing was lost through it. The
+  real live leak was `BreathReset.tsx:162`, the free-guide lead capture
+  (mounted at `App.tsx:71`), which sent name+email to Gmail instead of the
+  Form. Both are repaired in Stage 0.
 - **P-02 [HIGH]** `FLO-ASSET-REGISTER.md` declares an approved banner at
   `public/assets/flo-first-doorway-banner.png`. Neither file nor directory exists.
 - **P-03 [LOW]** Four orphaned images; `flo-first-doorway.jpg` exists at two

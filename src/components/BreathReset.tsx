@@ -6,6 +6,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Play, Pause, RotateCcw, Volume2, VolumeX, Mail, Check, Leaf, Sparkles, BookOpen } from "lucide-react";
+import { openIntake, type IntakeRouteResult } from "../lib/intake";
 
 interface BreathResetProps {
   onOpenLeadModal?: () => void;
@@ -25,6 +26,7 @@ export function BreathReset({ onOpenLeadModal }: BreathResetProps) {
   const [name, setName] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [routeResult, setRouteResult] = useState<IntakeRouteResult | null>(null);
 
   // Rhythms: inhale, hold, exhale, hold-empty times in seconds
   const rhythms = {
@@ -155,12 +157,18 @@ export function BreathReset({ onOpenLeadModal }: BreathResetProps) {
     e.preventDefault();
     if (!email) return;
 
+    // Routes to the approved Google Form (the single front door per
+    // CRM-HANDOFF.md). Never falls back to mailto: a silent downgrade to
+    // email is what kept these enquiries out of the CRM.
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-      window.location.href = `mailto:Floordeliefde21@gmail.com?subject=3x5 Breath Reset Guide Request&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}`;
-    }, 900);
+    const result = openIntake({
+      name,
+      email,
+      interest: "3x5 Breath Reset Guide",
+    });
+    setLoading(false);
+    setRouteResult(result);
+    setSubmitted(true);
   };
 
   // Calculate motion scale and label
@@ -409,12 +417,35 @@ export function BreathReset({ onOpenLeadModal }: BreathResetProps) {
                   <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-sage-500 text-cream-50 mb-2">
                     <Check className="w-4 h-4" />
                   </div>
-                  <h5 className="text-sm font-accent font-semibold text-sage-900">
-                    Somatic Booklet Prepared!
-                  </h5>
-                  <p className="text-xs text-sage-600 mt-1 leading-relaxed">
-                    I have sent it to <strong>{email}</strong>. Look for an email from <em>Floortje</em> to begin today.
-                  </p>
+                  {routeResult?.ok ? (
+                    <>
+                      <h5 className="text-sm font-accent font-semibold text-sage-900">
+                        One last step
+                      </h5>
+                      <p className="text-xs text-sage-600 mt-1 leading-relaxed">
+                        The intake form has opened in a new tab. Complete it there
+                        and Flo will send the guide to <strong>{email}</strong>.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <h5 className="text-sm font-accent font-semibold text-sage-900">
+                        Open the intake form to finish
+                      </h5>
+                      <p className="text-xs text-sage-600 mt-1 leading-relaxed">
+                        The form could not open automatically — your browser may
+                        have blocked it. Use the link below to finish your request.
+                      </p>
+                      <a
+                        href={routeResult?.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block mt-2.5 text-xs font-accent font-semibold text-sage-900 underline underline-offset-2"
+                      >
+                        Open the intake form
+                      </a>
+                    </>
+                  )}
                 </div>
               ) : (
                 <form onSubmit={handleLeadSubmit} className="space-y-2">

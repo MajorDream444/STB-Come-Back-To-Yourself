@@ -211,7 +211,7 @@ replacement is absent.
 
 → *Pain points: wrong/missing production images; documentation drift.*
 
-### 4.2 — Booking flow bypasses the CRM **[HIGH]**
+### 4.2 — Untracked `mailto:` submissions bypass the CRM **[CORRECTED 2026-10-14]**
 
 `CRM-HANDOFF.md` states: *"The Google Form is now the single front door for all
 inquiries."*
@@ -221,6 +221,19 @@ inquiries."*
 ```
 window.location.href = `mailto:Floordeliefde21@gmail.com?subject=Booking Request — …`
 ```
+
+> **CORRECTION (2026-10-14, Stage 0 verification).** The original text of this
+> section claimed the booking UI was the live primary conversion surface and
+> that bookings were being lost. That was wrong, and the error was mine: I did
+> not check whether the component was mounted.
+>
+> Verified facts: **`BookingSession.tsx` is not imported or rendered anywhere**
+> (`App.tsx` does not reference it), so it has **no live impact and no
+> inquiries were lost through it**. However, **`BreathReset.tsx:162` — which
+> *is* mounted at `App.tsx:71` — contained the same hardcoded `mailto:`
+> pattern** on the free-guide lead capture, and I missed it. That was the real
+> live leak. Severity of the code defect stands; the revenue claim does not.
+> Both are repaired in Stage 0.
 
 This is an **incomplete migration**, which is a sharper diagnosis than a
 simple mismatch. `src/types.ts` shows the migration was already done elsewhere:
